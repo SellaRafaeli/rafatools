@@ -5,7 +5,6 @@ require 'bundler'
 require 'active_support'
 require 'active_support/core_ext'
 require 'sinatra/reloader' #dev-only
-# require 'sinatra/activerecord'
 
 puts "requiring gems..."
 
@@ -13,7 +12,7 @@ Bundler.require
 
 Dotenv.load
 
-$app_name   = 'my-app'
+$app_name   = 'mindy'
 
 require './setup'
 require './my_lib'
@@ -24,6 +23,7 @@ require_all './bl'
 require_all './comm'
 require_all './logging'
 require_all './mw'
+require './scheduler'
 
 include Helpers #makes helpers globally available 
 
@@ -46,4 +46,8 @@ end
 
 get '/about' do
   erb :'other/about'
+end
+
+def reload
+  exec $0, *ARGV #makes tux reload when running "reload"
 end

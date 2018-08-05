@@ -86,10 +86,27 @@ def rand_time(from = 0.0, to = Time.now)
   Time.at(from + rand * (to.to_f - from.to_f))
 end
 
+# String
+class String
+  def first_letter_upcase!
+    self[0] = self[0].upcase
+    self
+  end
+
+  def first_letter_downcase!
+    self[0] = self[0].downcase
+    self
+  end
+end
+
 def rand_str
   Faker::Hacker.ingverb
 end
 
 def rand_url
   Faker::Internet.url
+end
+
+def load_json(path)
+  JSON.load(File.read(path)).hwia
 end

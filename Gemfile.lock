@@ -27,6 +27,8 @@ GEM
     domain_name (0.5.20160216)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.1)
+    et-orbi (1.1.4)
+      tzinfo
     faker (1.6.3)
       i18n (~> 0.5)
     ffi (1.9.10-x64-mingw32)
@@ -110,6 +112,8 @@ GEM
       rack (>= 1.0)
       rack-test (~> 0.6.2)
       ripl (>= 0.7.0)
+    rufus-scheduler (3.4.2)
+      et-orbi (~> 1.0)
     shotgun (0.9.1)
       rack (>= 1.0)
     sinatra (1.4.7)
@@ -177,6 +181,7 @@ DEPENDENCIES
   require_all
   rest-client (= 1.8.0)
   ripl-color_result
+  rufus-scheduler (= 3.4.2)
   shotgun
   sinatra
   sinatra-contrib
@@ -189,4 +194,4 @@ RUBY VERSION
    ruby 2.2.4p230
 
 BUNDLED WITH
-   1.12.5
+   1.16.1

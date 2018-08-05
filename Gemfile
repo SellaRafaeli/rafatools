@@ -10,7 +10,9 @@ gem 'bson_ext'
 gem 'pg'
 #gem 'activerecord'
 #gem 'sinatra-activerecord'
+
 #gem 'rake'
+gem 'rufus-scheduler', '3.4.2'
 gem 'json'
 gem 'pry-byebug',           '2.0.0' # binding.pry for breakpoints
 gem 'tux'
