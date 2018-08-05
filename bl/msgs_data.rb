@@ -1,8 +1,15 @@
-def get_prefix
-  ['hey','hey there','hi','hi there','hello','hello there','quick reminder -','yo,','reminding you that','just wanted to remind you','just wanted to tell you','reminder -','hey, what\'s up?','how\'s it going?','how are you?','what\'s going on?']
+def get_core_prefix
+  prefix = ['hey','hey there','hi','hi there','hello','hello there','quick reminder -','yo,','reminding you that','just wanted to remind you','just wanted to tell you','reminder -','hey, what\'s up?','how\'s it going?','how are you?','what\'s going on?'].sample
 end
 
-def get_msg
+def get_msg_prefix
+  prefix = get_core_prefix  
+  breaks = [',','-','- ','!','.',';','?']
+  prefix+=',' if !(breaks.any? {|d| prefix.ends_with? d})
+  prefix
+end
+
+def get_msg_body
   [
       'You are doing great',
       'Keep up the good work',
@@ -30,9 +37,23 @@ def get_msg
       "Everything's going to be just fine.",
       "If you're stressed by whatever it is - then it ain't worth it :)",
       "Remember to take time off to refresh your mind.",
-  ]  
+      "Today is a great day and you are doing great.",
+      "remind yourself of three things you are thankful for",
+      "Life is now. Don't stress about it.",
+      "Life's short - make sure you enjoy it",
+      "Today is an awesome day!",
+      "Life is awesome",
+      "We are always stressed. Remember to work out your 'relaxation' muscle ;)",
+      "Don't worry! Be happy ;)",
+      "There's no time to relax like the present",
+      "Will you look back in 5 years and remember this day fondly?",
+      "Smile! It will make you feel better",
+      "Stop worrying. You are doing fine.",
+  ].sample
 end
 
-def get_emoji 
+
+
+def get_msg_emoji 
   ["😀", "😁", "😂", "😃", "😄", "😅", "😆", "😉", "😊", "😋", "😎", "😍", "😘", "😚", "😌", "😛", "😜", "😝", "😇", "😸", "😹", "😻", "😼", "😽", "👼", "💪", "👌", "👍", "✊", "👏"].sample
 end

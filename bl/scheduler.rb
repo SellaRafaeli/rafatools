@@ -5,13 +5,13 @@ $scheduler = Rufus::Scheduler.new
 def is_good_time
   t = Time.now
   sf_hour = (t.hour - 7) # time is GMT, -7 for SF 
-  # if sf_hour > 17 || sf_hour < 9 return false
-  # if t.sunday?    || t.saturday? return false
+  if sf_hour > 17 || sf_hour < 9 return false
+  if t.sunday?    || t.saturday? return false
   true
 end
 
 def send_message
-  msg = get_msg_to_send
+  msg = build_msg
   twilio_send msg
 end
 
@@ -19,7 +19,7 @@ def run_bg_msgs
   Thread.new {
     puts "Mindy Scheduler is loading."    
 
-    $scheduler.every '30m' do
+    $scheduler.every '120m' do
       if is_good_time
         Thread.new {
           # sleep rand 1000 * 60 * 10

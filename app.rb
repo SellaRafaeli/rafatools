@@ -23,31 +23,9 @@ require_all './bl'
 require_all './comm'
 require_all './logging'
 require_all './mw'
-require './scheduler'
 
 include Helpers #makes helpers globally available 
 
 get '/ping' do
-  {msg: "pong from #{$app_name}", val: 'CarWaiting (is the new TrainSpotting)'}
-end
-
-get '/me' do
-  {cu: cu}
-end
-
-get '/' do
-  erb :homepage, layout: :layout
-end
-
-get '/protected' do
-  protected!
-  erb :tester, layout: :layout
-end
-
-get '/about' do
-  erb :'other/about'
-end
-
-def reload
-  exec $0, *ARGV #makes tux reload when running "reload"
+  {msg: "pong from #{$app_name}", val: 'It is always now'}
 end

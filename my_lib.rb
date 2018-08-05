@@ -110,3 +110,11 @@ end
 def load_json(path)
   JSON.load(File.read(path)).hwia
 end
+
+def reload
+  exec $0, *ARGV #makes tux reload when running "reload"
+end
+
+def prob(probability)
+  rand < probability
+end
