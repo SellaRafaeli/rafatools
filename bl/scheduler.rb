@@ -5,8 +5,8 @@ $scheduler = Rufus::Scheduler.new
 def is_good_time
   t = Time.now
   sf_hour = (t.hour - 7) # time is GMT, -7 for SF 
-  if sf_hour > 17 || sf_hour < 9 return false
-  if t.sunday?    || t.saturday? return false
+  return false if sf_hour > 17 || sf_hour < 9 
+  return false if t.sunday?    || t.saturday? 
   true
 end
 
