@@ -7,5 +7,9 @@ def twilio_send(msg)
   to = '+972522934321' # Your mobile phone number
 
   puts "sending twilio message #{from} to #{to}, body #{msg}"
-  client.messages.create(from: from, to: to, body: msg)
+  if $prod
+    client.messages.create(from: from, to: to, body: msg)
+  else 
+    puts "<skipping actual SMS since not prod>"
+  end
 end

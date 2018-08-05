@@ -12,7 +12,7 @@ end
 
 def send_message
   msg = build_msg
-  twilio_send msg
+  twilio_send msg 
 end
 
 def run_bg_msgs
@@ -33,7 +33,7 @@ def run_bg_msgs
   }
 end
 
-# run_bg_msgs
+run_bg_msgs
 
 # EVERY_DAY_AT_5_AM                = '0 5 * * *' #time is GMT
 # EVERY_DAY_AT_5_MIN_PAST_EIGHT_PM = '5 20 * * *'
