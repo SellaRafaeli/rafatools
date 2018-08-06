@@ -19,7 +19,7 @@ def run_bg_msgs
   Thread.new {
     puts "Mindy Scheduler is loading."    
 
-    $scheduler.every '1m' do
+    $scheduler.every '30m' do
       if is_good_time
         Thread.new {
           # sleep rand 1000 * 60 * 10
