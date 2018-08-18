@@ -16,21 +16,21 @@ def send_message
 end
 
 def run_bg_msgs
-  Thread.new {
-    puts "Mindy Scheduler is loading."    
+  # Thread.new {
+  #   puts "Mindy Scheduler is loading."    
 
-    $scheduler.every '30m' do
-      if is_good_time
-        Thread.new {
-          # sleep rand 1000 * 60 * 10
-          send_message  
-        }      
-      end
-    end
+  #   $scheduler.every '30m' do
+  #     if is_good_time
+  #       Thread.new {
+  #         # sleep rand 1000 * 60 * 10
+  #         send_message  
+  #       }      
+  #     end
+  #   end
     
-    puts "Mindy Scheduler is now running."
-    scheduler.join  
-  }
+  #   puts "Mindy Scheduler is now running."
+  #   scheduler.join  
+  # }
 end
 
 run_bg_msgs
