@@ -17,7 +17,7 @@ def send_message
   twilio_send msg 
 end
 
-scheduler.every '10s' do
+scheduler.every '1m' do
   send_message
 end
 
