@@ -3,8 +3,8 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.every '60m' do
-  send_message
+scheduler.every '86m' do
+  
 end
 
 puts "Mindy Scheduler is now running."
