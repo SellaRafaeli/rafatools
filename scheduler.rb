@@ -3,20 +3,6 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler.new
 
-def is_good_time
-  t = Time.now
-  sf_hour = (t.hour - 7) # time is GMT, -7 for SF 
-  # return false if sf_hour > 17 || sf_hour < 9 
-  # return false if t.sunday?    || t.saturday? 
-  true
-end
-
-def send_message
-  bp
-  msg = build_msg
-  twilio_send msg 
-end
-
 scheduler.every '60m' do
   send_message
 end
