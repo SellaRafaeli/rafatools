@@ -4,7 +4,7 @@ require 'rufus-scheduler'
 scheduler = Rufus::Scheduler.new
 
 scheduler.every '86m' do
-  
+  send_all_users
 end
 
 puts "Mindy Scheduler is now running."
