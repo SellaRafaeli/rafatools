@@ -1,4 +1,10 @@
+def extra_msg
+  [MSGS_RON, MSGS_INSPIRATION, MSGS_ENTREP].sample.sample.squish
+end
+
 def build_msg(user = all_users.first)
+  return extra_msg if user[:extra_msgs] && prob(0.75)
+
   prefix = prob(0.25) ? get_msg_prefix : ''
   body   = get_msg_body(user)
   emoji  = prob(0.25) ? get_msg_emoji : ''
@@ -9,14 +15,16 @@ end
 
 def all_users
   [{name: 'sella', gmt_offset: -7, phone: '+972522934321'},
-    {name: 'liliya', gmt_offset: +3, phone: '+972549135125'}]
+   {name: 'liliya', gmt_offset: +3, phone: '+972549135125', max_hour: 23, extra_msgs: true}]
 end
 
 def is_good_time(user)
   t          = Time.now
   offset     = user[:gmt_offset]
   local_hour = (t.hour + offset) # time is GMT, -7 for SF 
-  return false if local_hour > 17 || local_hour < 9 
+  too_early  = local_hour < 9
+  too_late   = local_hour > (user[:max_hour] || 17)  
+  return false if too_early || too_late
   # return false if t.sunday?    || t.saturday? 
   true
 end
