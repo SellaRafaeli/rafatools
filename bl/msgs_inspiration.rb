@@ -182,7 +182,6 @@ MSGS_INSPIRATION = ["The only people who never fail are those who never try - Il
  "Yesterday’s home runs don’t win today’s games - Babe Ruth",
  "You should always stay hungry. Stay hungry, so you can eat - Syed Balkhi",
  "If you’re not living life on the edge, you’re taking up too much space - Anonymous",
- "I wasn’t satisfied just to earn a good living. I was looking to make a statement - Donald Trump",
  "Opportunity is missed by most people because it is dressed in overalls and looks like work - Thomas Edison",
  "You must either modify your dreams or magnify your skills - Jim Rohn",
  "Keep away from people who try to belittle your ambitions. Small people always do that, but the really great make you feel that you, too, can become great - Mark Twain",
