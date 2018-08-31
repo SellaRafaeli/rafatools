@@ -14,7 +14,7 @@ def build_msg(user = all_users.first)
 end
 
 def all_users
-  [{name: 'sella', gmt_offset: -7, phone: '+972522934321'},
+  [{name: 'sella', gmt_offset: -7, phone: '+14157173226'},
    {name: 'liliya', gmt_offset: +3, phone: '+972549135125', max_hour: 23, extra_msgs: true}]
 end
 
