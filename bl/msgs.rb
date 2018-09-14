@@ -1,9 +1,10 @@
 def extra_msg
-  [MSGS_RON, MSGS_INSPIRATION, MSGS_ENTREP].sample.sample.squish
+  # [MSGS_RON, MSGS_INSPIRATION, MSGS_ENTREP].sample.sample.squish
+  [MSGS_RON].sample.sample.squish
 end
 
 def build_msg(user = all_users.first)
-  return extra_msg if user[:extra_msgs] && prob(0.75)
+  return extra_msg if user[:extra_msgs] && prob(0.25)
 
   prefix = prob(0.25) ? get_msg_prefix : ''
   body   = get_msg_body(user)
