@@ -75,6 +75,14 @@ SELLA_MSGS = [
       "Remember to smile and be cheerful! It will make others happy, and more importantly - it will make you happy. :)"  
   ]
 
+
+SELLA_MSGS += [
+  'YES YOU CAN',
+  "You can do it!",
+  'You are unbreakable',
+  'You are fucking awesome'
+]
+
 FROM_LILIYA = ["Sella, Think about one thing that made you happy today",
   "Sella, Think about one thing that made you happy this week",
   "Sella, Think about one thing that made you happy this month",
