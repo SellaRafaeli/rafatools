@@ -16,7 +16,7 @@ end
 
 def all_users
   [{name: 'sella', gmt_offset: -7, phone: '+14157173226'},
-   {name: 'liliya', gmt_offset: +3, phone: '+972549135125', max_hour: 23, extra_msgs: true}]
+   {name: 'liliya', gmt_offset: +3, phone: '+972549135125', max_hour: 21, extra_msgs: true}]
 end
 
 def is_good_time(user)
