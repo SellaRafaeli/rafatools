@@ -28,11 +28,11 @@ gem 'colorize'
 gem 'literate_randomizer'
 gem 'faker'
 gem 'bcrypt'
-gem 'paypal-sdk-adaptivepayments'
+# gem 'paypal-sdk-adaptivepayments'
 gem 'twilio-ruby'
-gem 'postmark'
+# gem 'postmark'
 gem "sinatra-cross_origin", "~> 0.3.1"
-gem 'mysql2'
+# gem 'mysql2'
 #gem 'base62' #allows compression of mongo ids
 
 group :development, :test do
