@@ -72,7 +72,14 @@ SELLA_MSGS = [
       "Don't sweat the small stuff",
       "Don't compare yourself to other people. You don't know their story; you don't know the struggles and the problems they are dealing with.",
       "Do what you choose - enjoy what you get.",
-      "Remember to smile and be cheerful! It will make others happy, and more importantly - it will make you happy. :)"  
+      "Remember to smile and be cheerful! It will make others happy, and more importantly - it will make you happy. :)",
+      "If you're having negative thoughts - ignore them.",
+      "Be happy",
+      "Everything is great",
+      "Life is going great",
+      "Today is going fantastic",
+      "all is fine",
+      "all is well" 
   ]
 
 

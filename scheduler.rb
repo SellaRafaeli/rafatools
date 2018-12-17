@@ -4,15 +4,15 @@ require 'rufus-scheduler'
 scheduler = Rufus::Scheduler.new
 
 
-scheduler.every '120m' do
+scheduler.every '150m' do
   sella  = all_users[0]  
   send_user_msg(sella)
 end
 
-scheduler.every '210m' do
-  liliya  = all_users[1]  
-  send_user_msg(liliya)
-end
+# scheduler.every '210m' do
+#   liliya  = all_users[1]  
+#   send_user_msg(liliya)
+# end
 
 
 puts "Mindy Scheduler is now running."

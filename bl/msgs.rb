@@ -15,16 +15,16 @@ def build_msg(user = all_users.first)
 end
 
 def all_users
-  [{name: 'sella', gmt_offset: -7, phone: '+14157173226'},
-   {name: 'liliya', gmt_offset: +3, phone: '+972549135125', max_hour: 21, extra_msgs: true}]
+  [{name: 'sella', gmt_offset: -7, phone: '+14157173226'}]
+   #{name: 'liliya', gmt_offset: +3, phone: '+972549135125', max_hour: 21, extra_msgs: true}]
 end
 
 def is_good_time(user)
   t          = Time.now
   offset     = user[:gmt_offset]
   local_hour = (t.hour + offset) # time is GMT, -7 for SF 
-  too_early  = local_hour < 9
-  too_late   = local_hour > (user[:max_hour] || 17)  
+  too_early  = local_hour < 10
+  too_late   = local_hour > (user[:max_hour] || 19)  
   return false if too_early || too_late
   # return false if t.sunday?    || t.saturday? 
   true
