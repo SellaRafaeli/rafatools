@@ -56,6 +56,8 @@ SELLA_MSGS = [
       "Life is awesome",
       "We are always stressed. Remember to work out your 'relaxation' muscle ;)",
       "Don't worry! Be happy ;)",
+      "Life is amazing - just take it all in",
+      "Enjoy life now :)",
       "There's no time to relax like the present",
       "Will you look back in 5 years and remember this day fondly?",
       "Smile! It will make you feel better",
@@ -79,7 +81,24 @@ SELLA_MSGS = [
       "Life is going great",
       "Today is going fantastic",
       "all is fine",
-      "all is well" 
+      "all is well",
+      "Remember you promised yourself not to worry",
+      "Remember you set yourself a promise - not to worry",
+      "Remember to not worry at all times",
+      "Remember we always a challenge. We must relax.",
+      "Remember to take things easy. Nothing really matters.",
+      "Remember nothing really matters.",
+      "Nothing actually matters that much",
+      "You are most certainly overworrying yourself :)",
+      "Everything is OK",
+      "Be present now. Do not worry about the future",
+      "Less worrying - more enjoying life :)",
+      "You are crushing it",
+      "Don't worry man - it's all working out",
+      "Remember you told yourself not to worry.",
+      "You promised me not to worry",
+      "This is the future you were worried about. Everything is great.",
+      "The future is now. Everything is great now, and everything will be great in the future. :)"
   ]
 
 

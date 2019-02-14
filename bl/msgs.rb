@@ -23,8 +23,8 @@ def is_good_time(user)
   t          = Time.now
   offset     = user[:gmt_offset]
   local_hour = (t.hour + offset) # time is GMT, -7 for SF 
-  too_early  = local_hour < 10
-  too_late   = local_hour > (user[:max_hour] || 19)  
+  too_early  = local_hour < 9
+  too_late   = local_hour > (user[:max_hour] || 22)  
   return false if too_early || too_late
   # return false if t.sunday?    || t.saturday? 
   true
