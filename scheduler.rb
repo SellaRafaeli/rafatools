@@ -4,7 +4,7 @@ require 'rufus-scheduler'
 scheduler = Rufus::Scheduler.new
 
 
-scheduler.every '60m' do
+scheduler.every '150m' do
   sella  = all_users[0]  
   send_user_msg(sella)
 end
