@@ -1,0 +1,2 @@
+$users = $mongo.collection('users')
+

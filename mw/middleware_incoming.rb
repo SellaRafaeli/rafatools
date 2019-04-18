@@ -78,14 +78,6 @@ def cuid
   cu && cu['_id']
 end
 
-def cusername 
-  cu && cu['username']
-end
-
-def cuemail
-  cu && cu['email']
-end
-
 def request_path
   _req.path rescue nil #for tux
 end

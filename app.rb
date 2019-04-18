@@ -29,3 +29,24 @@ include Helpers #makes helpers globally available
 get '/ping' do
   {msg: "pong from #{$app_name}", val: 'It is always now'}
 end
+
+get '/' do
+	erb :'home/home', default_layout
+end
+
+get '/signup' do
+	num = pr[:num]
+	if user = $users.get(num: num)
+		session[:user_id] = user[:_id] 
+	else
+		user = $users.add(num: num)
+		session[:user_id] = user[:_id] 
+	end
+
+	redirect '/me'
+end
+
+get '/me' do
+	redirect '/' unless cu
+	erb :'me/me', default_layout
+end
