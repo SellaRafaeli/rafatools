@@ -1,5 +1,5 @@
 <%
-#bp
+use_stripe_prod = ENV['USE_STRIPE_PROD']
 x=1
 %>
 <!-- Load Stripe.js on your website. -->
@@ -21,7 +21,7 @@ x=1
 <div id="error-message"></div>
 
 <script>
-  <% if $prod %>
+  <% if use_stripe_prod %>
   var stripe = Stripe('pk_live_Gh1kxLfeIef81yDlPEGylnNu00FTrMY5S2');  
   var checkoutButton = document.getElementById('checkout-button-plan_EuCvtjM4zbYR0q');
   <% else %>
