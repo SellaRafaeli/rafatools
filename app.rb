@@ -30,6 +30,10 @@ get '/ping' do
   {msg: "pong from #{$app_name}", val: 'It is always now'}
 end
 
+post '/ping' do
+  {msg: "post pong from #{$app_name}", val: 'It is always now'}
+end
+
 get '/' do
 	erb :'home/home', default_layout
 end
