@@ -20,6 +20,7 @@ GEM
     colorize (0.8.1)
     columnize (0.9.0)
     concurrent-ruby (1.1.4)
+    connection_pool (2.2.2)
     debugger-linecache (1.2.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
@@ -47,6 +48,8 @@ GEM
     multi_json (1.13.1)
     multipart-post (2.0.0)
     mustermann (1.0.3)
+    net-http-persistent (3.0.0)
+      connection_pool (~> 2.2)
     netrc (0.11.0)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -103,6 +106,9 @@ GEM
     sinatra-reloader (1.0)
       sinatra-contrib
     slop (3.6.0)
+    stripe (4.13.0)
+      faraday (~> 0.13)
+      net-http-persistent (~> 3.0)
     thread_safe (0.3.6)
     tilt (2.0.9)
     tux (0.3.0)
@@ -152,6 +158,7 @@ DEPENDENCIES
   sinatra-contrib
   sinatra-cross_origin (~> 0.3.1)
   sinatra-reloader
+  stripe
   tux
   twilio-ruby
 

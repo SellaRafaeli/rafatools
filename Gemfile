@@ -34,6 +34,7 @@ gem 'twilio-ruby'
 gem "sinatra-cross_origin", "~> 0.3.1"
 # gem 'mysql2'
 #gem 'base62' #allows compression of mongo ids
+gem 'stripe' 
 
 group :development, :test do
   gem 'puma'

@@ -1,52 +1,18 @@
-<% if $prod %>
+<%
+#bp
+x=1
+%>
 <!-- Load Stripe.js on your website. -->
 <script src="https://js.stripe.com/v3"></script>
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  <% if $prod %>
   id="checkout-button-plan_EuCvtjM4zbYR0q"
-  role="link"
->
-  Checkout
-</button>
-
-<div id="error-message"></div>
-
-<script>
-  var stripe = Stripe('pk_live_Gh1kxLfeIef81yDlPEGylnNu00FTrMY5S2');
-
-  var checkoutButton = document.getElementById('checkout-button-plan_EuCvtjM4zbYR0q');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{plan: 'plan_EuCvtjM4zbYR0q', quantity: 1}],
-
-      // Note that it is not guaranteed your customers will be redirected to this
-      // URL *100%* of the time, it's possible that they could e.g. close the
-      // tab between form submission and the redirect.
-      successUrl: window.location.protocol + '//mindylife.com/success',
-      cancelUrl: window.location.protocol + '//mindylife.com/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-</script>
-<% else %>
-<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  <% else %>
   id="checkout-button-plan_EuCjldhDkwYwYt"
+  <% end %>
   role="link"
 >
   Checkout
@@ -55,15 +21,24 @@
 <div id="error-message"></div>
 
 <script>
+  <% if $prod %>
+  var stripe = Stripe('pk_live_Gh1kxLfeIef81yDlPEGylnNu00FTrMY5S2');  
+  var checkoutButton = document.getElementById('checkout-button-plan_EuCvtjM4zbYR0q');
+  <% else %>
   var stripe = Stripe('pk_test_MYDb1N30sX4oaAR2POucBUeA00NxQE7W2M');
-
   var checkoutButton = document.getElementById('checkout-button-plan_EuCjldhDkwYwYt');
+  <% end %>
+
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
+      <% if $prod %>
+      items: [{plan: 'plan_EuCvtjM4zbYR0q', quantity: 1}],
+      <% else %>
       items: [{plan: 'plan_EuCjldhDkwYwYt', quantity: 1}],
-
+      <% end %>      
+      clientReferenceId: "<%= cu['_id'] %>",
       // Note that it is not guaranteed your customers will be redirected to this
       // URL *100%* of the time, it's possible that they could e.g. close the
       // tab between form submission and the redirect.
@@ -80,4 +55,3 @@
     });
   });
 </script>
-<% end %>
