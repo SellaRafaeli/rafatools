@@ -1,5 +1,5 @@
 $prod       = settings.production? #RACK_ENV==production?
-$prod_url   = 'http://app.herokuapp.com'
+$prod_url   = 'https://mindylife.herokuapp.com'
 $root_url   = $prod ? $prod_url : 'http://localhost:9090'
 
 enable :sessions
