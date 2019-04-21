@@ -1,6 +1,6 @@
 $prod       = settings.production? #RACK_ENV==production?
 $prod_url   = 'https://mindylife.herokuapp.com'
-$root_url   = $prod ? $prod_url : 'http://localhost:9090'
+$root_url   = $prod ? $prod_url : 'http://localhost:7070'
 
 enable :sessions
 set :session_secret, '&a*n31994@'
@@ -20,6 +20,11 @@ def get_fullpath
   $root_url + request.fullpath
 end
 
+configure :development do |c|
+  require 'sinatra/reloader' 
+  enable :reloader
+  c.also_reload "./**/*.rb" 
+end
 # configure :development, :production do
 #  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///testdb')
 

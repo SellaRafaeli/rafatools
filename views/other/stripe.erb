@@ -36,8 +36,8 @@ x=1
       // Note that it is not guaranteed your customers will be redirected to this
       // URL *100%* of the time, it's possible that they could e.g. close the
       // tab between form submission and the redirect.
-      successUrl: $root_url + '/success',
-      cancelUrl:  $root_url + '/canceled',
+      successUrl: '<%= $root_url %>' + '/success',
+      cancelUrl:  '<%= $root_url %>' + '/canceled',
     })
     .then(function (result) {
       if (result.error) {

@@ -1,6 +1,21 @@
 <h1> Me </h1>
 
-<h4><%= cu['num'] %></h4>
+<div>
+	<h4>Your phone number: <%= cu['num'] %></h4>
+	
+	<h4>Your account is active: <span class='active'> <%= !!cu['active'] %> </span></h4>
+	<button onclick=toggleActive()> Toggle </button>
 
-<%= erb :'other/stripe' %>
+	<h4>You have paid: <%= !!cu['paid'] %></h4>
+	<%= erb :'other/stripe' %>	
 
+</div>
+
+<script>
+function toggleActive() {
+	$.post('/me/toggle_active').then(res => { 
+		console.log(res);
+		$('.active').text(res.active);
+	});
+}
+</script>
