@@ -179,8 +179,9 @@ TO_LILIYA = [
 ]
 
 def get_msg_body(user)
-  return (SELLA_MSGS+FROM_LILIYA).sample if user[:name] == 'sella'
-  return (SELLA_MSGS+TO_LILIYA).sample if user[:name] == 'liliya'
+  SELLA_MSGS.sample
+  # return (SELLA_MSGS+FROM_LILIYA).sample if user[:name] == 'sella'
+  # return (SELLA_MSGS+TO_LILIYA).sample if user[:name] == 'liliya'
 end
 
 def get_msg_emoji 
