@@ -3,7 +3,9 @@
 <div>
 	<h4>Your phone number: <%= cu['num'] %></h4>
 	
+	<% if false %>	
 	<h4>Your account is active: <span class='active'> <%= !!cu['active'] %> </span> <button onclick=toggleActive()> Toggle </button></h4>
+	<% end %>
 
 	<% if !cu['paid'] %>	
 	<h4> Pay to start getting messages: <%= erb :'other/stripe' %> </h4>
