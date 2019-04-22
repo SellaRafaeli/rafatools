@@ -1,5 +1,5 @@
 <%
-use_stripe_prod = ENV['USE_STRIPE_PROD']
+use_stripe_prod = ENV['USE_STRIPE_PROD'] == 'true'
 stripe_btn_id   = use_stripe_prod ? "checkout-button-plan_EuCvtjM4zbYR0q" : "checkout-button-plan_EuCjldhDkwYwYt"
 x=1
 %>
@@ -9,7 +9,7 @@ x=1
 
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em" id="<%= stripe_btn_id %>" role="link">
-  Pay
+  Pay <%= use_stripe_prod ? "" : "(staging)" %>
 </button>
 
 <div id="error-message"></div>

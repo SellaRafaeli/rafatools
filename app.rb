@@ -50,6 +50,16 @@ get '/signup' do
 	redirect '/me'
 end
 
+get '/success' do
+	flash.message = 'Great!'
+	redirect '/me'
+end
+
+get '/cancel' do
+	flash.message = 'Please try again!'
+	redirect '/me'
+end
+
 get '/me' do
 	redirect '/' unless cu
 	erb :'me/me', default_layout
