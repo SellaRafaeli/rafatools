@@ -35,11 +35,23 @@ post '/ping' do
 end
 
 get '/' do
+	redirect '/me' if cu
 	erb :'home/home', default_layout
+end
+
+get '/logout' do
+	session.clear 
+	flash.message = 'Thanks, bye!'
+	redirect '/'
 end
 
 get '/signup' do
 	num = pr[:num]
+	if num.size < 10
+		flash.message = 'Number seems too short. Try again?'
+		redirect back
+	end
+
 	if user = $users.get(num: num)
 		session[:user_id] = user[:_id] 
 	else
