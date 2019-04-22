@@ -46,7 +46,8 @@ get '/logout' do
 end
 
 get '/signup' do
-	num = pr[:num]
+	num = pr[:num]#.just_digits
+
 	if num.size < 10
 		flash.message = 'Number seems too short. Try again?'
 		redirect back

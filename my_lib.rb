@@ -99,7 +99,7 @@ class String
   end
 
   def just_digits
-    gsub(/\s+/,'').gsub(/[()+-.]/,'')
+    tr('^0-9', '') 
   end
 end
 
