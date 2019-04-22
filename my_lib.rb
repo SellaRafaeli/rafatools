@@ -97,6 +97,10 @@ class String
     self[0] = self[0].downcase
     self
   end
+
+  def just_digits
+    gsub(/\s+/,'').gsub(/[()+-.]/,'')
+  end
 end
 
 def rand_str

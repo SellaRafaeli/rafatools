@@ -55,6 +55,7 @@ get '/signup' do
 	if user = $users.get(num: num)
 		session[:user_id] = user[:_id] 
 	else
+		data = {num: num}
 		user = $users.add(num: num)
 		session[:user_id] = user[:_id] 
 	end
