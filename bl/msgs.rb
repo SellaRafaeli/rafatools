@@ -14,6 +14,10 @@ def build_msg(user = all_users.first)
   msg    = clean_phrase(msg)
 end
 
+def all_paid_users
+  $users.all(paid: true)
+end
+
 def all_users
   #[{name: 'sella', gmt_offset: -7, phone: '+14157173226'}]  
   $users.all
@@ -38,6 +42,6 @@ def send_user_msg(u)
   end
 end
 
-def send_all_users
-  all_users.each {|u| send_user_msg(u) }
+def send_all_paid_users
+  all_paid_users.each {|u| send_user_msg(u) }
 end

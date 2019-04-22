@@ -3,10 +3,10 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler.new
 
-
 scheduler.every '150m' do
-  sella  = all_users[0]  
-  send_user_msg(sella)
+	all_paid_users.each {|user| 
+		send_user_msg(sella)
+	}
 end
 
 # scheduler.every '210m' do

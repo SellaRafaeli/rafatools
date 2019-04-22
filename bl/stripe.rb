@@ -9,7 +9,7 @@ post '/stripe_notif' do
 		type    = pr[:type]
 		user_id = pr[:data]['object']['client_reference_id']
 		if user_id && type.in?(SUCCESS_STRIPE_NOTIFS_TYPES)
-			$users.update_id(user_id, {paid: Time.now}) rescue nil
+			$users.update_id(user_id, {paid: true, paid_at: Time.now}) rescue nil
 		end
 	rescue => e
 		log_e(e)
