@@ -34,6 +34,13 @@ def require_user
   halt(401, {msg: 'Log in please'}) if !cu 
 end
 
+def redirect_unless_user
+  if !cu
+    flash.message = 'Please log in first.'
+    redirect '/'
+  end
+end
+
 get '/halts' do
   {msg: 'halt!'}
 end

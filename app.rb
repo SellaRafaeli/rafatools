@@ -57,7 +57,7 @@ get '/signup' do
 		session[:user_id] = user[:_id] 
 	else
 		data = {num: num}
-		user = $users.add(num: num)
+		user = $users.add(num: num, gmt_offset: -7, active: true)
 		session[:user_id] = user[:_id] 
 	end
 
@@ -75,6 +75,13 @@ get '/cancel' do
 end
 
 get '/me' do
-	redirect '/' unless cu
+	redirect_unless_user
 	erb :'me/me', default_layout
+end
+
+post '/me' do
+	redirect_unless_user
+	$users.update_id(cu['_id'],{gmt_offset: pr[:gmt_offset], active: !!pr[:active]})
+	flash.message = 'Updated settings.'
+	redirect '/me'
 end

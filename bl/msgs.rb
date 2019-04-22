@@ -15,7 +15,7 @@ def build_msg(user = all_users.first)
 end
 
 def all_paid_users
-  $users.all(paid: true)
+  $users.all(paid: true, active: true)
 end
 
 def all_users
@@ -28,7 +28,7 @@ def is_good_time(user)
   t          = Time.now
   offset     = user[:gmt_offset] || -7
   local_hour = (t.hour + offset) # time is GMT, -7 for SF 
-  too_early  = local_hour < 9
+  too_early  = local_hour < 10
   too_late   = local_hour > (user[:max_hour] || 22)  
   return false if too_early || too_late
   # return false if t.sunday?    || t.saturday? 
