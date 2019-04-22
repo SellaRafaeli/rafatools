@@ -5,7 +5,7 @@ scheduler = Rufus::Scheduler.new
 
 scheduler.every '180m' do
 	all_paid_users.each {|user| 
-		send_user_msg(sella)
+		send_user_msg(user)
 	}
 end
 
