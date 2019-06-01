@@ -98,15 +98,15 @@ SELLA_MSGS = [
       "Remember you told yourself not to worry.",
       "You promised me not to worry",
       "This is the future you were worried about. Everything is great.",
-      "The future is now. Everything is great now, and everything will be great in the future. :)"
+      "The future is now. Everything is great now, and everything will be great in the future. :)",
       "Be optimistic. You might as well.",
       "Be optimistic - it makes everything better.",
       "Life will be even better than it is right now.",
       "Everything's going to be fine.",
-      "You will have time for everything."
-      "There's going to be enough time."
+      "You will have time for everything.",
+      "There's going to be enough time.",
       "You're doing exactly the right thing.",
-      "Don't get angry; it ain't worth it."
+      "Don't get angry; it ain't worth it.",
       "No point in worrying.",
       "Do whatever you're goinna do; do not waste time worrying about it.",
       "Don't feel any need to rush.",
