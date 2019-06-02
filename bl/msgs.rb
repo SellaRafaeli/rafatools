@@ -32,5 +32,7 @@ def send_user_msg(u)
   if is_good_time(u)
     msg = build_msg(u)
     twilio_send(msg,u[:num])
+  else 
+    'skipping, not good time'
   end
 end

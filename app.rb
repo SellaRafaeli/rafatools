@@ -62,8 +62,8 @@ end
 
 post '/login' do
 	email = pr[:email]
-
 	if user = $users.get(email: email)
+		$users.update_id(user[:_id], {token: guid})
 		flash.message = 'We sent you a magic login link to your email - click it to log in.'
 		redirect back
 	else
