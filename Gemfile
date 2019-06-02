@@ -39,8 +39,6 @@ gem 'stripe'
 
 group :development, :test do
   gem 'puma'
-  gem 'shotgun'
   gem 'sinatra-reloader'
-  gem 'faker' 
   gem 'nokogiri'
 end

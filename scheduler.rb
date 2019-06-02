@@ -3,10 +3,16 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.every '180m' do
+def send_to_all_users
 	$users.all(active: true).each {|user| 
-		send_user_msg(user)
+		if user[:num].to_s.length
+			send_user_msg(user)
+		end
 	}
+end
+
+scheduler.every '180m' do
+	send_to_all_users	
 end
 
 # scheduler.every '210m' do
