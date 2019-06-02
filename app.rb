@@ -45,43 +45,50 @@ get '/logout' do
 	redirect '/'
 end
 
-get '/signup' do
-	num = pr[:num]#.just_digits
+post '/signup' do
+	email = pr[:email]
 
-	if num.size < 10
-		flash.message = 'Number seems too short. Try again?'
+	if user = $users.get(email: email)
+		flash.message = 'Email already taken. Try to Login?'
+		redirect back
+	else
+		data = {email: email, active: true}
+		user = $users.add(data)
+		session[:user_id] = user[:_id] 
+		flash.message = 'Welcome.'
+		redirect '/me'
+	end
+end
+
+post '/login' do
+	email = pr[:email]
+
+	if user = $users.get(email: email)
+		flash.message = 'We sent you a magic login link to your email - click it to log in.'
+		redirect back
+	else
+		flash.message = 'No such user. Try to sign up?'		
 		redirect back
 	end
+end
 
-	if user = $users.get(num: num)
-		session[:user_id] = user[:_id] 
+get '/login' do
+	erb :'home/login', default_layout
+end
+
+get '/email_login' do
+	token = pr[:token]
+
+	if user = $users.get(token: token) 
+		session[:user_id] = user[:_id]
+		flash.message = "Welcome, #{user[:email]}"
+		redirect '/'
 	else
-		data = {num: num}
-		user = $users.add(num: num, gmt_offset: -7, active: true)
-		session[:user_id] = user[:_id] 
+		flash.message = 'Token expired, please try again.'
+		redirect '/login'
 	end
-
-	redirect '/me'
 end
 
-get '/success' do
-	flash.message = 'Great!'
-	redirect '/me'
-end
-
-get '/cancel' do
-	flash.message = 'Please try again!'
-	redirect '/me'
-end
-
-get '/me' do
-	redirect_unless_user
-	erb :'me/me', default_layout
-end
-
-post '/me' do
-	redirect_unless_user
-	$users.update_id(cu['_id'],{gmt_offset: pr[:gmt_offset], active: !!pr[:active]})
-	flash.message = 'Updated settings.'
-	redirect '/me'
+def sella
+	$users.get(email: 'sella.rafaeli@gmail.com')
 end

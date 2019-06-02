@@ -1,3 +1,6 @@
+START_HOUR = 10
+END_HOUR   = 22
+
 def extra_msg
   # [MSGS_RON, MSGS_INSPIRATION, MSGS_ENTREP].sample.sample.squish
   [MSGS_RON].sample.sample.squish
@@ -28,8 +31,8 @@ def is_good_time(user)
   t          = Time.now
   offset     = user[:gmt_offset] || -7
   local_hour = (t.hour + offset) # time is GMT, -7 for SF 
-  too_early  = local_hour < 10
-  too_late   = local_hour > (user[:max_hour] || 22)  
+  too_early  = local_hour < START_HOUR #10
+  too_late   = local_hour > END_HOUR #(user[:max_hour] || 22)  
   return false if too_early || too_late
   # return false if t.sunday?    || t.saturday? 
   true

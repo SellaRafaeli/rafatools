@@ -2,11 +2,13 @@
 	<h1> Mindy </h1>
 	<h5> Live a better life with AI & science-based mindful reminders. </h5>
 
-	<form action='/signup'>
-		<label> Your phone number: </label>
+	<form action='/signup' method='post'>
+		<label> Your email: </label>
 		<div>
-			<input placeholder='+1-415-123-4567' name='num' />
+			<input placeholder='you@gmail.com' name='email' />
 		</div>
-		<button class='btn btn-raised btn-primary'>Sign Up</button>
+		<button class='btn btn-raised btn-primary'>Sign Up</button>		
 	</form>
+	<a href='/login' class='btn btn-raised btn-primary'>Login</a>
 </div>
+

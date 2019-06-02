@@ -55,6 +55,8 @@ GEM
       mini_portile2 (~> 2.4.0)
     paint (2.1.0)
     pg (1.1.4)
+    postmark (1.16.0)
+      json
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -145,6 +147,7 @@ DEPENDENCIES
   mongo (~> 2.1.0)
   nokogiri
   pg
+  postmark
   pry-byebug (= 2.0.0)
   puma
   rack-parser (= 0.6.0)
