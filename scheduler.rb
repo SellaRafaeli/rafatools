@@ -4,7 +4,7 @@ require 'rufus-scheduler'
 scheduler = Rufus::Scheduler.new
 
 scheduler.every '180m' do
-	all_paid_users.each {|user| 
+	$users.all(active: true).each {|user| 
 		send_user_msg(user)
 	}
 end

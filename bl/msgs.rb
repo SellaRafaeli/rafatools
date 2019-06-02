@@ -17,19 +17,9 @@ def build_msg(user = all_users.first)
   msg    = clean_phrase(msg)
 end
 
-def all_paid_users
-  $users.all(paid: true, active: true)
-end
-
-def all_users
-  #[{name: 'sella', gmt_offset: -7, phone: '+14157173226'}]  
-  $users.all
-  #{name: 'liliya', gmt_offset: +3, phone: '+972549135125', max_hour: 21, extra_msgs: true}]
-end
-
 def is_good_time(user)
   t          = Time.now
-  offset     = user[:gmt_offset] || -7
+  offset     = user[:gmt_offset].to_f || -7
   local_hour = (t.hour + offset) # time is GMT, -7 for SF 
   too_early  = local_hour < START_HOUR #10
   too_late   = local_hour > END_HOUR #(user[:max_hour] || 22)  
@@ -43,8 +33,4 @@ def send_user_msg(u)
     msg = build_msg(u)
     twilio_send(msg,u[:num])
   end
-end
-
-def send_all_paid_users
-  all_paid_users.each {|u| send_user_msg(u) }
 end
