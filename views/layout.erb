@@ -4,9 +4,12 @@
 <body>  
     <%= erb :"layout/flash" %>        
     <div class='top-nav'>
-      <a href='/'> mindy </a>
-      <a href='/login'> login </a>
-      <% if cu %> <a href='/logout'> logout </a> <% end %>
+      <a href='/'> mindy </a>      
+      <% if cu %> 
+        <a href='/logout'> logout </a> 
+      <% else %>
+        <a href='/login'> login </a>
+      <% end %>
     </div>    
     <div class='container'>
       <%= yield %> 
