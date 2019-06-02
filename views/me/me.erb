@@ -4,16 +4,16 @@
 	<h4>Your email: <%= cu[:email] %></h4>
 	
 	<% if false %>	
+			<h4> You will get a helpful message approximately once every 3 hours, between <%=START_HOUR%>:00 and <%=END_HOUR%>:00.</h4>
 	<h4>Your account is active: <span class='active'> <%= !!cu['active'] %> </span> <button onclick=toggleActive()> Toggle </button></h4>
 	<% end %>
-
-		<h4> You will get a helpful message approximately once every 3 hours, between <%=START_HOUR%>:00 and <%=END_HOUR%>:00.</h4>
+	
 		<form action='me' method='post'>
-			<label> Your GMT offset: <input name=gmt_offset type=number value="<%=cu[:gmt_offset]%>" min=-12 max=12 style='width: 50px'/> </label>
+			<label> Your GMT offset: </label><input name=gmt_offset type=number value="<%=cu[:gmt_offset]%>" min=-12 max=12 style='width: 50px'/> 
 			<br/>
-			<label> Your international phone number: <input placeholder='121255551234' name=num type=number value="<%=cu[:num]%>" style='width: 250px'/> </label>
+			<label> Your international phone number: </label><input placeholder='121255551234' name=num type=number value="<%=cu[:num]%>" style='width: 150px'/> 
 			<br/>
-			<label> Receive messages: <input name=active type=checkbox <%="checked" if cu[:active]%> /> </label>
+			<label> Receive messages:</label><input name=active type=checkbox <%="checked" if cu[:active]%> /> 
 		<!-- <label> You will receive messages </label>
 
 		<label> every </label>
@@ -37,7 +37,7 @@
 			<% end %>
 		</select> -->
 			<br/>
-			<button> Update </button>
+			<button class='btn btn-primary btn-rasied'> Update </button>
 		</form>
 
 	<a href='/logout' class='btn btn-primary btn-raised'> Log out </a>

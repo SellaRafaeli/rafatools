@@ -89,6 +89,12 @@ get '/email_login' do
 	end
 end
 
+get '/flash' do
+	flash.message = guid.to_s
+	redirect '/'
+end
+
 def sella
 	$users.get(email: 'sella.rafaeli@gmail.com')
 end
+

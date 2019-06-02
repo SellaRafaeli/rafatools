@@ -3,9 +3,11 @@
 <%= erb :'layout/doc_head' %>
 <body>  
     <%= erb :"layout/flash" %>        
-    <% if _req.path!='/' %>
-      <%#= erb :'header' %>   
-    <% end %>
+    <div class='top-nav'>
+      <a href='/'> mindy </a>
+      <a href='/login'> login </a>
+      <% if cu %> <a href='/logout'> logout </a> <% end %>
+    </div>    
     <div class='container'>
       <%= yield %> 
     </div>
