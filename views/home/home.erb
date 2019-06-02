@@ -5,32 +5,38 @@
 .hp-msg {
 	font-size: 150%;
 }
+.signup_input {
+  margin: 20px;
+	padding: 7px;
+	position: relative;
+	top: 2px;
+	width: 200px;
+}
 </style>
 <div class='hp'>
-	<h1> Mindy </h1>
+	<h1 class='blue1 superbold'> Mindy. <span style='display: none; `color: black; font-size:80%; font-weight: 0'> helps you live a better life with mindfulness reminders. </span>	</h1>
 
 	<div style='zwidth: 400px'> 
 		<h3 style='display: inline-block;'> Live a better life with mindfulness reminders. </h3>	
-		<form action='/signup' method='post' style='text-align: center; display: inline-block;'>
-			<input placeholder='you@gmail.com' name='email' autofocus style='margin: 20px'/>
-			<button class='btn btn-raised btn-primary'>Sign Up</button>		
+		<form action='/signup' method='post' style='text-align: center; display: inline-block; position: relative; top: -3px'>
+			<input class='signup_input' placeholder='you@gmail.com' name='email' autofocus style='margin: 20px'/>
+			<button class='btn btn-raised btn-info'>Sign Up</button>		
 		</form>
 	</div>
 	
-	<div>
-		<span class='ct' style='width: 40%; display: inline-block;'>
+	<div class='row'>
+		<span class='col-md-4 col-sm-12 col-xs-12 ct' style='min-width: 40%; display: inline-block;'>
 			<img src='/img/msg_pic.jpg' />	
 		</span>
-		<span style='width: 50%; display: inline-block; vertical-align: top;'>
-			<div class='hp-msg well'> Mindy uses AI to send you personalized mindful reminders to your phone.</div>
-			<div class='hp-msg well'> These messages help you focus on remaining mindful and calm throughout the day.</div>
-			<div class='hp-msg well'> It's free, forever, with no ads. </div>
+		<span class='col-md-6 col-sm-12 ct' style='min-width: 40%; display: inline-block; vertical-align: top;'>
+			<div class='hp-msg well1'> Mindy sends you reminders that <span class='blue1 bold'>everything is going to be ok.</span></div>
+			<div class='hp-msg well1'> Mindy reminds you to break negative thought cycles, and stay <span class='blue1 bold'>mindful</span> and <span class='blue1 bold'>positive</span>.</div>
+			<div class='hp-msg well1'> Mindy helps you <span class='blue1 bold'>be happy</span> and <span class='blue1 bold'>enjoy life more</span>.</div>
+			<div class='hp-msg well1'> Mindy runs on donations; it is free, forever, with no ads. </div>
 		</span>
 	</div>
 	
-
-	<div style='text-align: center'>
-		
+	<div style='text-align: center'>		
 	</div>
 </div>
 
