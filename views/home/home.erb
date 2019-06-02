@@ -1,11 +1,36 @@
-<div>
+<style>
+.b1 {
+	border:1px solid red;
+}
+.hp-msg {
+	font-size: 150%;
+}
+</style>
+<div class='hp'>
 	<h1> Mindy </h1>
-	<h5> Live a better life with positive mindful reminders, driven by AI, Western Science and Eastern Spirituality. </h5>
 
-	<form action='/signup' method='post'>
-		<label> Your email: </label> <input placeholder='you@gmail.com' name='email' />
-		<br/>
-		<button class='btn btn-raised btn-primary'>Sign Up</button>		
-	</form>
+	<div style='zwidth: 400px'> 
+		<h3 style='display: inline-block;'> Live a better life with mindfulness reminders. </h3>	
+		<form action='/signup' method='post' style='text-align: center; display: inline-block;'>
+			<input placeholder='you@gmail.com' name='email' autofocus style='margin: 20px'/>
+			<button class='btn btn-raised btn-primary'>Sign Up</button>		
+		</form>
+	</div>
+	
+	<div>
+		<span class='ct' style='width: 40%; display: inline-block;'>
+			<img src='/img/msg_pic.jpg' />	
+		</span>
+		<span style='width: 50%; display: inline-block; vertical-align: top;'>
+			<div class='hp-msg well'> Mindy uses AI to send you personalized mindful reminders to your phone.</div>
+			<div class='hp-msg well'> These messages help you focus on remaining mindful and calm throughout the day.</div>
+			<div class='hp-msg well'> It's free, forever, with no ads. </div>
+		</span>
+	</div>
+	
+
+	<div style='text-align: center'>
+		
+	</div>
 </div>
 
