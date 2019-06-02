@@ -26,6 +26,7 @@ gem 'babosa',                '1.0.2' #creating slugs. (.to_slug)
 gem 'ripl-color_result'    #used to color console output?
 gem 'colorize' 
 gem 'literate_randomizer'
+gem 'rack-ssl-enforcer'
 gem 'faker'
 gem 'bcrypt'
 # gem 'paypal-sdk-adaptivepayments'
