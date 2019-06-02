@@ -11,7 +11,7 @@
 		<form action='me' method='post'>
 			<label> Your GMT offset: <input name=gmt_offset type=number value="<%=cu[:gmt_offset]%>" min=-12 max=12 style='width: 50px'/> </label>
 			<br/>
-			<label> Your international phone number: <input placeholder='+1-212-5555-1234' name=num type=number value="<%=cu[:num]%>" style='width: 250px'/> </label>
+			<label> Your international phone number: <input placeholder='121255551234' name=num type=number value="<%=cu[:num]%>" style='width: 250px'/> </label>
 			<br/>
 			<label> Receive messages: <input name=active type=checkbox <%="checked" if cu[:active]%> /> </label>
 		<!-- <label> You will receive messages </label>
