@@ -52,7 +52,7 @@ post '/signup' do
 		flash.message = 'Email already taken. Try to Login?'
 		redirect back
 	else
-		data = {email: email, active: true}
+		data = {email: email, active: true, gmt_offset: 0}
 		user = $users.add(data)
 		session[:user_id] = user[:_id] 
 		flash.message = 'Welcome.'
