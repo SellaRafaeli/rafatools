@@ -8,7 +8,9 @@ def twilio_send(msg, to_num)
 
   puts "sending twilio message #{from} to #{to}, body #{msg}"
   if $prod
-    return client.messages.create(from: from, to: to, body: msg)
+    res = client.messages.create(from: from, to: to, body: msg)
+    # $sent_messages.add(...)
+    res
   else 
     return "<skipping actual SMS since not prod>"
   end

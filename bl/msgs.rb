@@ -1,3 +1,5 @@
+$sm = $sent_messages = $mongo.collection('sent_messages')
+
 START_HOUR = 10
 END_HOUR   = 22
 
