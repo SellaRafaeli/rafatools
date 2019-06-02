@@ -9,7 +9,7 @@
 	<% end %>
 	
 		<form action='me' method='post'>
-			<label> Your phone number: </label><%= erb :'me/area_codes_dropdown' %><input placeholder='415-717-3226' name=num value="<%=cu[:num].to_s.sub(cu[:country_code].to_s,'')%>" style='width: 150px' required/> 
+			<label> Your phone number: </label><%= erb :'me/area_codes_dropdown' %><input placeholder='415-717-3226' pattern=.{8,} title='8 digits minimum' name=num value="<%=cu[:num].to_s.sub(cu[:country_code].to_s,'')%>" style='width: 150px' required/> 
 			<br/>
 			<label> Receive messages:</label><input name=active type=checkbox <%="checked" if cu[:active]%> /> 
 		<!-- <label> You will receive messages </label>
