@@ -9,9 +9,7 @@
 	<% end %>
 	
 		<form action='me' method='post'>
-			<label> Your GMT offset: </label><input name=gmt_offset type=number value="<%=cu[:gmt_offset]%>" min=-12 max=12 style='width: 50px'/> 
-			<br/>
-			<label> Your international phone number: </label><input placeholder='121255551234' name=num type=number value="<%=cu[:num]%>" style='width: 150px'/> 
+			<label> Your phone number: </label><%= erb :'me/area_codes_dropdown' %><input placeholder='415-717-3226' name=num value="<%=cu[:num].sub(cu[:country_code].to_s,'')%>" style='width: 150px' required/> 
 			<br/>
 			<label> Receive messages:</label><input name=active type=checkbox <%="checked" if cu[:active]%> /> 
 		<!-- <label> You will receive messages </label>

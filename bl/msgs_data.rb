@@ -111,7 +111,13 @@ SELLA_MSGS = [
       "Do whatever you're goinna do; do not waste time worrying about it.",
       "Don't feel any need to rush.",
       "Everything is ok. Everything is going to turn out just fine.",
-      "It's a nice, relaxed day."
+      "It's a nice, relaxed day.",
+      "Today will be a nice day.",
+      "Make sure you are happy",
+      "Make sure you are enjoying yourself",
+      "Remember to be happy.",
+      "Remember to enjoy the ride before it ends.",
+
   ]
 
 
