@@ -36,6 +36,6 @@ def send_user_msg(u)
     twilio_send(msg,u[:num])
     $sent_messages.add(user_id: u[:_id], email: u[:email], msg: msg)
   else 
-    'skipping, not good time'
+    $sent_messages.add(user_id: u[:_id], email: u[:email], skipped: true)
   end
 end
