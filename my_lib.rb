@@ -101,6 +101,10 @@ class String
   def just_digits
     tr('^0-9', '') 
   end
+
+  def ensure_prefix(prefix)
+    starts_with?(prefix) ? self : prefix.to_s+self 
+  end
 end
 
 def rand_str

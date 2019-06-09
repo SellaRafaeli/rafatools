@@ -4,7 +4,7 @@ def twilio_send(msg, to_num)
   client = Twilio::REST::Client.new(account_sid, auth_token)
 
   from = '+14153267892' # Your Twilio number
-  to = to_num
+  to = to_num.to_s.ensure_prefix('+')
 
   puts "sending twilio message #{from} to #{to}, body #{msg}"
   if $prod
