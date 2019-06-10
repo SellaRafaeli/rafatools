@@ -27,10 +27,6 @@ require_all './mw'
 
 include Helpers #makes helpers globally available 
 
-get '/about' do 
-	render_page 'about'
-end
-
 get '/ping' do
   {msg: "pong from #{$app_name}", val: 'It is always now'}
 end
