@@ -10,6 +10,7 @@ puts "requiring gems..."
 
 Bundler.require
 
+puts "loading dotenv..."
 Dotenv.load
 
 $app_name   = 'mindy'
@@ -25,6 +26,10 @@ require_all './logging'
 require_all './mw'
 
 include Helpers #makes helpers globally available 
+
+get '/about' do 
+	render_page 'about'
+end
 
 get '/ping' do
   {msg: "pong from #{$app_name}", val: 'It is always now'}
@@ -96,6 +101,11 @@ end
 get '/flash' do
 	flash.message = guid.to_s
 	redirect '/'
+end
+
+def render_page(page)
+	path = "pages/#{page}"
+	erb path.to_sym, layout: :layout
 end
 
 def sella

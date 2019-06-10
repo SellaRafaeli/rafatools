@@ -7,7 +7,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'mongo', '~> 2.1.0'
 gem 'bson_ext'
-gem 'pg'
+# gem 'pg'
 gem 'activesupport',        '5.0.0.1' # utility functions like hash.slice
 #gem 'activerecord'
 #gem 'sinatra-activerecord'
@@ -16,19 +16,19 @@ gem 'activesupport',        '5.0.0.1' # utility functions like hash.slice
 gem 'rufus-scheduler', '3.4.2'
 gem 'json'
 gem 'pry-byebug',           '2.0.0' # binding.pry for breakpoints
-gem 'tux'
+# gem 'tux'
 gem 'rack-parser',          '0.6.0' # rack middleware
 gem 'require_all'
-gem 'httpclient',           '2.5.2'
+# gem 'httpclient',           '2.5.2'
 gem 'rest-client', '1.8.0'
 gem 'dotenv'
 gem 'babosa',                '1.0.2' #creating slugs. (.to_slug)
 gem 'ripl-color_result'    #used to color console output?
 gem 'colorize' 
-gem 'literate_randomizer'
+# gem 'literate_randomizer'
 gem 'rack-ssl-enforcer'
-gem 'faker'
-gem 'bcrypt'
+# gem 'faker'
+# gem 'bcrypt'
 # gem 'paypal-sdk-adaptivepayments'
 gem 'twilio-ruby'
 gem 'postmark'
