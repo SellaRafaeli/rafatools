@@ -5,7 +5,7 @@ scheduler = Rufus::Scheduler.new
 
 def send_to_all_users
 	$users.all(active: true).each {|user| 
-		if user[:num].to_s.length
+		if user[:num].to_s.length > 6 
 			send_user_msg(user)
 		end
 	}

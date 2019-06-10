@@ -72,8 +72,8 @@ post '/login' do
 	end
 end
 
-get '/login' do
-	erb :'home/login', default_layout
+get '/signup' do
+	erb :'home/signup', default_layout
 end
 
 get '/email_login' do
