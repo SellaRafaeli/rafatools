@@ -6,7 +6,6 @@ if $prod
   use Rack::SslEnforcer
 end
 
-
 helpers do
   def protected!
     return if authorized? || !$prod

@@ -60,6 +60,10 @@ post '/signup' do
 	end
 end
 
+get '/login' do
+	erb :'home/login', default_layout
+end
+
 post '/login' do
 	email = pr[:email]
 	if user = $users.get(email: email)
