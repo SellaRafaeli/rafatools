@@ -105,6 +105,10 @@ class String
   def ensure_prefix(prefix)
     starts_with?(prefix) ? self : prefix.to_s+self 
   end
+
+  def without(substr)
+    gsub(substr,'')
+  end
 end
 
 def rand_str

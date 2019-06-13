@@ -1,4 +1,4 @@
-MANAGEABLE_COLLECTIONS = ['users', 'sent_messages']
+MANAGEABLE_COLLECTIONS = ['users', 'sent_messages', 'errors']
 MANAGEABLE_COLLECTIONS.map! {|n| $mongo.collection(n) }
 
 get '/admin/dashboard' do

@@ -3,13 +3,23 @@ $sent_messages = $mongo.collection('sent_messages')
 START_HOUR = 10
 END_HOUR   = 22
 
-def extra_msg
+def ron_msgs
   # [MSGS_RON, MSGS_INSPIRATION, MSGS_ENTREP].sample.sample.squish
   [MSGS_RON].sample.sample.squish
 end
 
+def use_custom_msg(user)
+  return false unless prob(user[:custom_msgs_pct].to_f / 100) 
+
+  user[:custom_msgs].to_s.split("\n").sample.without("\r")
+rescue => e
+  log_e(e)
+  false
+end
+
 def build_msg(user = all_users.first)
-  return extra_msg if user[:extra_msgs] && prob(0.25)
+  #return extra_msg if user[:extra_msgs] && prob(0.25)
+  return extra_msg if extra_msg = use_custom_msg(user)
 
   prefix = prob(0.25) ? get_msg_prefix : ''
   body   = get_msg_body(user)

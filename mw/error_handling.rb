@@ -3,14 +3,14 @@ $errors = $mongo.collection('errors')
 module Helpers
   def log_e(err, data = {})  
     err = {msg: err.to_s, backtrace: err.backtrace.to_a.slice(0,4)} if err.is_a? Exception
-    err = {} unless err.is_a? Hash
-    err[:user_id]  = cuid
-    err[:username] = cusername
-    err[:path]     = request_path
-    err[:params]   = JSON.parse(_params.to_json) #sometimes params has un-BSON able fields
+    err = {msg: err} unless err.is_a? Hash
+    err[:user_id]  = cuid rescue 'nil'
+    err[:email]    = cu[:email] rescue 'no-email'
+    err[:path]     = request_path rescue 'no-path'
+    err[:params]   = JSON.parse(_params.to_json) rescue {} #sometimes params has un-BSON able fields
     $errors.add(err)
   rescue => e
-    nil
+    puts e
   end
 end
 
@@ -41,6 +41,7 @@ not_found do
 end
 
 get '/error' do
+  log_e('first')
   a = b 
 end
 
