@@ -1,5 +1,7 @@
 <h1> Advanced Settings </h1>
-
+<%
+custom_msgs_pct = cu[:custom_msgs_pct] || 50
+%>
 <div>
 		<form action='settings' method='post' class='form1'>
 			<label> Your custom messages<textarea name='custom_msgs' class='textarea1' placeholder='my custom message to myself' autofocus><%= cu[:custom_msgs]%></textarea></label>
@@ -7,8 +9,8 @@
 			<br/>
 			<br/>
 			<label> Use your custom messages approximately: </label> <select name="custom_msgs_pct" style='width: 70px'>
-				<% [25,50,75,100].each do |num| %>
-					<option value=<%=num%> <%= 'selected' if cu[:custom_msgs_pct]==num%>><%=num%>%</option>
+				<% [0,25,50,75,100].each do |num| %>
+					<option value=<%=num%> <%= 'selected' if custom_msgs_pct==num%>><%=num%>%</option>
 				<% end %>
 			</select> of the time
 			<br/>

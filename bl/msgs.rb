@@ -17,9 +17,10 @@ rescue => e
   false
 end
 
-def build_msg(user = all_users.first)
+def build_msg(user)
   #return extra_msg if user[:extra_msgs] && prob(0.25)
-  return extra_msg if extra_msg = use_custom_msg(user)
+  extra_msg = use_custom_msg(user)
+  return extra_msg if extra_msg
 
   prefix = prob(0.25) ? get_msg_prefix : ''
   body   = get_msg_body(user)

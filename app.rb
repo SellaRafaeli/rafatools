@@ -92,6 +92,7 @@ get '/email_login' do
 
 	if user = $users.get(token: token) 
 		session[:user_id] = user[:_id]
+		$users.update_id(user[:_id],{token: nil})
 		flash.message = "Welcome, #{user[:email]}"
 		redirect '/'
 	else
@@ -114,3 +115,6 @@ def sella
 	$users.get(email: 'sella.rafaeli@gmail.com')
 end
 
+def set_sella_token
+	$users.update_id(sella[:_id],{token: guid})
+end
