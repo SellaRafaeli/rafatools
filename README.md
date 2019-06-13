@@ -2,7 +2,9 @@ Mindy - The Mindfulness Helper
 
 # TODOs
 - google analytics
-- enable viewing what has been sent 
+- add images 
+- add notifications for new users and sent messages
+- contact twilio for bulk messaging
 - add 'terms of service' and 'privacy' 
 - make footer nicer
 - fix emails for "forgot my password"
