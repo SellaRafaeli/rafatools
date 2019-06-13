@@ -11,7 +11,7 @@ def send_to_all_users
 	}
 end
 
-scheduler.every '180m' do
+scheduler.every '175m' do
 	send_to_all_users	
 end
 

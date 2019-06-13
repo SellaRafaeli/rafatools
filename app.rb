@@ -40,6 +40,12 @@ get '/' do
 	erb :'home/home', default_layout
 end
 
+get '/sella' do
+	redirect '/' if $prod
+	session[:user_id] = sella[:_id]
+	redirect '/me'
+end
+
 get '/logout' do
 	session.clear 
 	flash.message = 'Thanks, bye!'

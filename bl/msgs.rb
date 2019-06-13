@@ -19,7 +19,16 @@ def build_msg(user = all_users.first)
   msg    = clean_phrase(msg)
 end
 
+def user_exceeded_daily_limit(user)
+  num_msgs_in_last_twelve_hours = $sent_messages.count(email: user[:email], created_at: {'$gt': Time.now - 12.hours}) 
+  limit = user[:num_msgs_per_day].to_i
+  limit = 1 if limit < 1
+  limit = 4 if limit > 4
+  return num_msgs_in_last_twelve_hours >= limit 
+end
+
 def is_good_time(user)
+  return false if user_exceeded_daily_limit(user)
   t          = Time.now
   offset     = user[:gmt_offset].to_f || -7
   local_hour = (t.hour + offset) % 24 # time is GMT, -7 for SF 

@@ -3,13 +3,17 @@
 <div>
 	<h4>Your email: <%= cu[:email] %></h4>
 	
-	<% if false %>	
-			<h4> You will get a helpful message approximately once every 3 hours, between <%=START_HOUR%>:00 and <%=END_HOUR%>:00.</h4>
-	<h4>Your account is active: <span class='active'> <%= !!cu['active'] %> </span> <button onclick=toggleActive()> Toggle </button></h4>
-	<% end %>
-	
-		<form action='me' method='post'>
-			<label> Your phone number: </label><%= erb :'me/area_codes_dropdown' %><input placeholder='415-717-3226' pattern=.{8,} title='8 digits minimum' name=num value="<%=cu[:num].to_s.sub(cu[:country_code].to_s,'')%>" style='width: 150px' required/> 
+		<form action='me' method='post' class='form1'>
+			<br/>
+			<label> Your phone number: </label> <%= erb :'me/area_codes_dropdown' %> <input placeholder='415-717-3226' pattern=.{8,} title='8 digits minimum' name=num value="<%=cu[:num].to_s.sub(cu[:country_code].to_s,'')%>" style='width: 150px' required/> 
+			<br/>
+			<br/>
+			<label> Get messages approximately: </label> <select name="num_msgs_per_day" style='width: 70px'>
+				<% [1,2,3,4].each do |num| %>
+					<option value=<%=num%> <%= 'selected' if cu[:num_msgs_per_day]==num%>><%=num%></option>
+				<% end %>
+			</select> times a day
+			<br/>
 			<br/>
 			<label> Receive messages:</label><input name=active type=checkbox <%="checked" if cu[:active]%> /> 
 		<!-- <label> You will receive messages </label>
@@ -38,12 +42,3 @@
 			<button class='btn btn-info btn-raised'> Update </button>
 		</form>
 </div>
-
-<script>
-function toggleActive() {
-	$.post('/me/toggle_active').then(res => { 
-		console.log(res);
-		$('.active').text(res.active);
-	});
-}
-</script>
