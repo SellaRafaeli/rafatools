@@ -1,4 +1,4 @@
-MANAGEABLE_COLLECTIONS = ['foo1']
+MANAGEABLE_COLLECTIONS = ['users', 'sent_messages']
 MANAGEABLE_COLLECTIONS.map! {|n| $mongo.collection(n) }
 
 get '/admin/dashboard' do
@@ -8,10 +8,6 @@ end
 get '/is_admin' do
   #session[:is_admin] = true if params[:foo] = 'bar'
   {is_admin: is_admin}
-end
-
-get '/admin/cities_mgmt' do
-  full_page_card(:"admin/cities_mgmt")
 end
 
 def is_admin(user = cu)
@@ -31,7 +27,7 @@ get "/admin/manage/:coll" do
 end 
 
 before '/admin*' do
-  #protected!
+  protected!
 end
 
 def verify_admin_val(collection, field, val)

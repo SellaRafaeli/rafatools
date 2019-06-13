@@ -16,7 +16,7 @@ gem 'activesupport',        '5.0.0.1' # utility functions like hash.slice
 gem 'rufus-scheduler', '3.4.2'
 gem 'json'
 gem 'pry-byebug',           '2.0.0' # binding.pry for breakpoints
-# gem 'tux'
+gem 'tux'
 gem 'rack-parser',          '0.6.0' # rack middleware
 gem 'require_all'
 # gem 'httpclient',           '2.5.2'
