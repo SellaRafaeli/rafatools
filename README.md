@@ -1,11 +1,11 @@
 Mindy - The Mindfulness Helper
 
-Mind
-
 # TODOs
-- enable sign-up with phone number 
-
-
-- Add emojis
-- Add attention-calling prefixes like "hey" to messages.
-
+- add 'terms of service' and 'privacy' 
+- make footer nicer
+- fix emails for "forgot my password"
+- get app 
+- enable chooes frequency of messages
+- enable choose language
+- add phrases in other languages
+- improve design 
